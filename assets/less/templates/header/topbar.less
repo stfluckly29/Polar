@@ -1,0 +1,36 @@
+header .topbar {
+	&:extend( .polar-text-color );
+	&:extend( .polar-text-font-size-m_1 );
+	& > .container {
+		display: table;
+		&:extend( .polar-header-topbar-height );
+	}
+	.left,
+	.right {
+		display: table-cell;
+		vertical-align: middle;
+	}
+	.left {
+		i {
+			margin-right: 12px;
+			&:not(:first-child) {
+				margin-left: 25px;
+			}
+		}
+	}
+	.right {
+		text-align: right;
+	}
+	.sep {
+		border-left: 1px solid;
+		font-size: 11px;
+		vertical-align: middle;
+	}
+	a:not(:hover) {
+		color: inherit;
+	}
+	i.ion-person {
+		font-size: 16px;
+		vertical-align: -5% !important;
+	}
+}

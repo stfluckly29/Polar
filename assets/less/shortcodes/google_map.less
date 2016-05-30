@@ -1,0 +1,117 @@
+// For VC Google Maps
+
+.wpb_gmaps_widget {
+	position: relative;
+	.wpb_wrapper {
+		padding: 0 !important;
+	}
+	&.vc_map_responsive .wpb_map_wraper {
+		padding-bottom: 50% !important;
+	}
+}
+
+.gmap_scrolloff {
+	pointer-events: none;
+}
+
+@media (min-width: 992px) {
+	.wpb_gmaps_widget {
+		&.vc_map_responsive .wpb_map_wraper {
+			padding-bottom: 30% !important;
+		}
+	}
+}
+
+// For SM Google Maps
+.polar_google_map {
+	.gmap-wrap {
+		padding-top: 50%;
+	}
+	.gmap-infobox {
+		.lh-box-shadow(0 0 30px 10px rgba(0, 0, 0, .2));
+		padding: 10px 15px;
+		&:before {
+			content: '';
+			position: absolute;
+		}
+		&.bottom:before {
+			left: 50%;
+			top: -12px;
+			margin-left: -8px;
+			border-left: 8px solid transparent;
+			border-right: 8px solid transparent;
+			border-bottom: 12px solid transparent;
+			border-bottom-color: inherit;
+		}
+		&.top:before {
+			left: 50%;
+			bottom: -12px;
+			margin-left: -8px;
+			border-left: 8px solid transparent;
+			border-right: 8px solid transparent;
+			border-top: 12px solid transparent;
+			border-top-color: inherit;
+		}
+		&.left:before {
+			right: -12px;
+			top: 13px;
+			border-top: 8px solid transparent;
+			border-bottom: 8px solid transparent;
+			border-left: 12px solid transparent;
+			border-left-color: inherit;
+		}
+		&.right:before {
+			left: -12px;
+			top: 13px;
+			border-top: 8px solid transparent;
+			border-bottom: 8px solid transparent;
+			border-right: 12px solid transparent;
+			border-right-color: inherit;
+		}
+		.gmap-infobox-image {
+			margin: 5px 15px 5px 0;
+		}
+	}
+	.gmap-infobox-inner {
+		min-width: 280px;
+		.clearfix();
+		p {
+			margin: 5px 0;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.gmap-infobox-title {
+		font-weight: bold;
+		margin-bottom: 5px;
+		padding-top: 5px;
+		text-transform: uppercase;
+	}
+	.gmap-infobox-image {
+		float: left;
+		margin: 5px 15px 0 0;
+		width: 100px;
+		height: auto;
+	}
+}
+@media (min-width: 992px) {
+	.polar_google_map .gmap-wrap {
+		padding-top: 30%;
+	}
+}
+
+/* Google Map Overridables */
+.polar_google_map {
+	.gmap-infobox {
+		&:extend( .polar-bg-color );
+		&:extend( .polar-bg-color-border-color );
+		&:extend( .polar-text-font-size );
+	}
+	.gmap-infobox-inner {
+		&:extend( .polar-text-font-size-m_1 );
+	}
+	.gmap-infobox-title {
+		&:extend( .polar-text-font-size );
+	}
+}

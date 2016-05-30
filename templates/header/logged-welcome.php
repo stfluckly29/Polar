@@ -1,0 +1,1 @@
+<?php /*<i class='ion-person'></i><?php printf( esc_html( _x( 'Welcome %s', '%s - username', 'polar' ) ), get_the_author_link() ); ?>*/ ?>

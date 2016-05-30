@@ -1,0 +1,180 @@
+.polar_image_carousel {
+	position: relative;
+	&.polar-trans-opacity {
+		.slide-item {
+			opacity: .6;
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+	&.polar-trans-hover {
+		.hover-image {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			.lh-transition(opacity .4s);
+			.lh-opacity(0);
+		}
+		.main-image {
+			.lh-transition(opacity .2s);
+			.lh-opacity(1);
+		}
+		.slide-item {
+			position: relative;
+			&:hover {
+				.main-image {
+					.lh-opacity(0);
+					.lh-transition(opacity .4s);
+				}
+				.hover-image {
+					.lh-opacity(1);
+					.lh-transition(opacity .2s);
+				}
+			}
+		}
+	}
+
+	.slide-item {
+		text-align: center;
+		display: inline-block;
+		vertical-align: middle;
+		float: none;
+		font-size: 0;
+		.lh-transition( opacity 0.2s );
+		border: none;
+		img {
+			.lh-transform(translateZ(0));
+			max-width: 100%;
+			width: auto;
+			height: auto;
+			display: inline-block;
+		}
+	}
+	.slider-container {
+		margin-bottom: 0;
+	}
+	&[data-show-nav-arrows] .slider-container {
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+
+	.arrow-control {
+		position: absolute;
+		.vcenter();
+		width: 40px;
+		height: 70px;
+		&:before, &:after {
+			.lh-transition(border-color 0.3s);
+			height: 35px;
+			width: 35px;
+			display: block;
+			content: '';
+			border-width: 3px;
+		}
+		&.next {
+			&:before {
+				.lh-transform(rotate(-45deg));
+				.lh-transform-origin(100% 100%);
+				border-right-style: solid;
+				margin-right: auto;
+			}
+			&:after {
+				.lh-transform(rotate(45deg));
+				.lh-transform-origin(100% 0%);
+				border-right-style: solid;
+				margin-right: auto;
+			}
+			right: 5px;
+		}
+		&.prev {
+			&:before {
+				.lh-transform(rotate(45deg));
+				.lh-transform-origin(0% 100%);
+				border-left-style: solid;
+				margin-left: auto;
+			}
+			&:after {
+				.lh-transform(rotate(-45deg));
+				.lh-transform-origin(0% 0%);
+				border-left-style: solid;
+				margin-left: auto;
+			}
+			left: 5px;
+		}
+	}
+
+	.slick-dots {
+		text-align: center;
+		margin: 50px 0 0 0;
+		position: static;
+		li {
+			height: 16px;
+			width: 16px;
+			margin: 0 8px;
+			button {
+				vertical-align: top;
+				cursor: pointer;
+				.lh-border-radius(50%);
+				display: inline-block;
+				position: relative;
+				width: 16px;
+				height: 16px;
+				.lh-transition( background-color .2s );
+				&:before {
+					content: none;
+				}
+			}
+		}
+	}
+	button.slick-arrow {
+		display: none !important;
+	}
+
+	.bullet-controls {
+		text-align: center;
+		margin-top: 50px;
+		.bullet-control {
+			cursor: pointer;
+			.lh-border-radius(50%);
+			display: inline-block;
+			position: relative;
+			width: 16px;
+			height: 16px;
+			margin: 0 5px;
+			background-color: rgba(0, 0, 0, .2);
+			.lh-transition( background-color .2s );
+			&.selected {
+				background-color: rgba(0, 0, 0, .5);
+			}
+		}
+	}
+}
+
+/* Overriadables */
+.polar_image_carousel {
+	.arrow-control {
+		&:before, &:after {
+			&:extend( .polar-border-color );
+		}
+		&:hover {
+			&:before, &:after {
+				&:extend( .polar-primary-color-border-color-important );
+			}
+		}
+	}
+	.slick-dots {
+		li {
+			button {
+				&:extend(.polar-border-color-bg-color);
+			}
+			&.slick-active button,
+			button:hover {
+				&:extend(.polar-primary-color-bg-color-important);
+			}
+		}
+	}
+}

@@ -1,0 +1,128 @@
+.polar_team_carousel {
+	&[data-show-nav-arrows] {
+		.slider-container {
+			margin-left: 50px;
+			margin-right: 50px;
+		}
+		.arrow-control {
+			display: block;
+		}
+	}
+	.slider-container {
+		overflow: hidden;
+		margin-bottom: 0;
+	}
+	
+	.arrow-control {
+		display: none;
+		position: absolute;
+		.vcenter();
+		border-width: 2px;
+		width: 35px;
+		height: 50px;
+		.lh-transition(border-color 0.2s, opacity 0.2s);
+		opacity: 0.5;
+		&:before, &:after {
+			height: 25px;
+			width: 25px;
+			display: block;
+			content: '';
+			border-width: 2px;
+		}
+		&.next {
+			&:before {
+				.lh-transform(rotate(-30deg));
+				.lh-transform-origin(100% 100%);
+				border-right-style: solid;
+				margin-right: auto;
+			}
+			&:after {
+				.lh-transform(rotate(30deg));
+				.lh-transform-origin(100% 0%);
+				border-right-style: solid;
+				margin-right: auto;
+			}
+			right: 0;
+		}
+		&.prev {
+			&:before {
+				.lh-transform(rotate(30deg));
+				.lh-transform-origin(0% 100%);
+				border-left-style: solid;
+				margin-left: auto;
+			}
+			&:after {
+				.lh-transform(rotate(-30deg));
+				.lh-transform-origin(0% 0%);
+				border-left-style: solid;
+				margin-left: auto;
+			}
+			left: 0;
+		}
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	.slick-list {
+		margin: 0 -15px;
+	}
+
+	.slick-dots {
+		text-align: center;
+		margin: 50px 0 0;
+		font-size: 0;
+		position: static;
+		li {
+			padding: 1px;
+			width: 16px;
+			height: 16px;
+			button {
+				vertical-align: top;
+				cursor: pointer;
+				.lh-border-radius(50%);
+				display: inline-block;
+				position: relative;
+				width: 10px;
+				height: 10px;
+				margin: 3px;
+				background-color: rgba(0, 0, 0, .2);
+				.lh-transition( all .2s );
+				&:before {
+					content: none;
+				}
+			}
+			&.slick-active button {
+				width: 16px;
+				height: 16px;
+				margin: 0;
+				&:extend( .polar-primary-color-bg-color );
+			}
+		}
+	}
+
+	.bullet-controls {
+		text-align: center;
+		margin-top: 50px;
+		.bullet-control {
+			cursor: pointer;
+			.lh-border-radius(50%);
+			display: inline-block;
+			position: relative;
+			width: 16px;
+			height: 16px;
+			margin: 0 5px;
+			background-color: rgba(0, 0, 0, .2);
+			.lh-transition( background-color .2s );
+			&.selected {
+				background-color: rgba(0, 0, 0, .5);
+			}
+		}
+	}
+
+	.arrow-control {
+		&:before, &:after {
+			&:extend( .polar-border-color );
+		}
+	}
+}

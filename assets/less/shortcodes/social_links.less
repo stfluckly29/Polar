@@ -1,0 +1,35 @@
+.polar_social_links {
+	margin-left: -10px;
+	margin-right: -10px;
+	.social-link {
+		display: inline-block;
+		line-height: 1;
+		margin-left: 10px;
+		margin-right: 10px;
+		text-align: center;
+		position: relative;
+		i {
+			position: relative;
+			line-height: inherit;
+			.zindex(1);
+		}
+		&:extend(.polar-text-color);
+		&:hover {
+			&:extend(.polar-primary-color-important);
+		}
+	}
+}
+.polar_social_links, .vc_polar_social_links {
+	&.polar-align-inline {
+		display: inline-block;
+	}
+	&.polar-align-center {
+		text-align: center;
+	}
+	&.polar-align-left {
+		text-align: left;
+	}
+	&.polar-align-right {
+		text-align: right;
+	}
+}

@@ -1,0 +1,304 @@
+.polar_contact_form {
+	position: relative;
+	.wpcf7 {
+		padding-bottom: 50px;
+		input[type=text],
+		input[type=email],
+		input[type=URL],
+		input[type=tel],
+		input[type=number],
+		input[type=date],
+		textarea, 
+		select {
+			.lh-transition(all 0.3s);
+			padding: 14px 16px;
+			line-height: 20px;
+			font-size: 16px;
+			&.polar-style-outline {
+				background: none transparent;
+				border-width: 1px;
+				border-style: solid;
+			}
+			&.polar-style-solid {
+				border: 1px solid transparent;
+			}
+			&.polar-style-blank {
+				border-color: transparent;
+				background: none transparent;
+			}
+			&.polar-style-underline {
+				.lh-border-radius(0);
+				border-left: none;
+				border-top: none;
+				border-right: none;
+				background: none transparent;
+				border-bottom-width: 2px;
+				border-bottom-style: solid;
+				overflow: hidden;
+			}
+			&.polar-shape-square {
+				.lh-border-radius(0);
+			}
+			&.polar-shape-rounded {
+				.lh-border-radius( @border-radius-value );
+			}
+		}
+		option {
+			color: #666;
+		}
+		::-webkit-inner-spin-button {
+			height: 20px;
+		}
+		input[type=date] {
+			height: 50px;
+			.lh-border-radius(0);
+		}
+		select {
+			-webkit-appearance: none;
+			border-radius: 0;
+			height: 50px;
+		}
+		textarea {
+			resize: none;
+		}
+
+		input[type=submit], button {
+			margin: 0;
+			&.polar-align-full {
+				display: block;
+				width: 100%;
+			}
+			&.polar-align-left {
+				display: block;
+				margin-right: auto;
+			}
+			&.polar-align-right {
+				display: block;
+				margin-left: auto;
+			}
+			&.polar-align-center {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		button {
+			&.polar-style-underline {
+				border: none;
+				background: none transparent;
+				padding: 5px 0;
+				border-bottom: 2px solid transparent;
+				font-size: 16px;
+				.lh-border-radius(0);
+				position:relative;
+				.lh-transition(top 0.2s);
+				top: 0;
+				&:before {
+					content: '';
+					position: absolute;
+					border-bottom: 2px solid transparent;
+					width: 10px;
+					transform: rotate(-45deg);
+					transform-origin: 100% 0%;
+					right: 0;
+					bottom: -2px;
+					.lh-transition(width 0.2s);
+				}
+				&:active:focus {
+					top: 5px;
+					&:before {
+						width: 0;
+					}
+				}
+			}
+		}
+		input[type=checkbox], input[type=radio] {
+			vertical-align: middle;
+		}
+		.wpcf7-not-valid {
+			border-color: @alert-error-border !important;
+		}
+		.wpcf7-not-valid-tip {
+			display: none;
+		}
+		.wpcf7-response-output {
+			position: absolute;
+			right: 15px;
+			bottom: 0;
+			margin-left: 15px;
+			margin-right: 0;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+			padding: 10px 15px;
+			&.polar-shape-square {
+				.lh-border-radius(0);
+			}
+			&.polar-shape-rounded {
+				.lh-border-radius( @border-radius-value );
+			}
+		}
+		.wpcf7-validation-errors,
+		.wpcf7-mail-sent-ng,
+		.wpcf7-spam-blocked {
+			border: 1px solid @alert-error-border;
+			background-color: @alert-error-bg;
+			color: @alert-error-content;
+		}
+		.wpcf7-mail-sent-ok {
+			border: 1px solid @alert-success-border;
+			background-color: @alert-success-bg;
+			color: @alert-success-content;
+		}
+		.wpcf7-list-item.first {
+			margin-left: 0;
+		}
+		.wpcf7-form-control-wrap {
+			margin-bottom: 30px;
+			position: relative;
+			display: block;
+			&[class*='your-'] {
+				&:after {
+					.ionicons;
+					content: '';
+					position: absolute;
+					font-size: 26px;
+					width: 50px;
+					height: 38px;
+					line-height: 50px;
+					right: 0;
+					top: 0;
+					text-align: center;
+					.zindex( 1 );
+				}
+				input, textarea {
+					overflow: hidden;
+					padding-right: 50px;
+				}
+			}
+			&.your-name:after {
+				content: '\f212';
+			}
+			&.your-email:after {
+				content: '\f132';
+			}
+			&.your-subject:after {
+				content: '\f149';
+			}
+			&.your-message:after {
+				content: '\f11b';
+			}
+			&.your-phone:after {
+				content: '\f1fa';
+			}
+			&.your-date:after {
+				content: '\f117';
+			}
+			&.your-time:after {
+				content: '\f26e';
+			}
+		}
+	}
+}
+
+/* Contact Form Overridables */
+.polar_contact_form .wpcf7 {
+	input[type=text],
+	input[type=email],
+	input[type=URL],
+	input[type=tel],
+	input[type=number],
+	input[type=date],
+	textarea, 
+	select {
+		&:extend(.polar-text-font-size);
+		&:extend(.polar-text-color);
+		&:extend(.polar-border-color);
+		&.polar-style-outline {
+			&:extend(.polar-border-color);
+		}
+		&.polar-style-solid {
+			&:extend(.polar-bg-color2);
+			&:focus {
+				&:extend(.polar-primary-color-border-color);
+			}
+		}
+		&.polar-style-underline {
+			&:focus {
+				&:extend(.polar-primary-color-border-color);
+			}
+		}
+	}
+	.wpcf7-form-control-wrap:after {
+		&:extend(.polar-border-color-color);
+	}
+	button.polar-style-underline {
+		&:extend(.polar-primary-color);
+		&, &:before {
+			&:extend(.polar-primary-color-border-color);
+		}
+	}
+}
+
+.polar-subscribe-cf7 {
+	margin: 0 auto;
+	padding: 10px;
+	position: relative;
+	&:before {
+		content: '';
+		width: 100%;
+		height: 60px;
+		box-sizing: border-box;
+		left: 0;
+		top: 0;
+		position: absolute;
+		border-width: 1px;
+		border-style: solid;
+		background-color: rgba(255, 255, 255, 0.08);
+		&:extend(.polar-border-color);
+	}
+	.wpcf7-form-control-wrap {
+		margin: 0 !important;
+	}
+	.input-wrap {
+		width: 100%;
+		display: table-cell;
+		vertical-align: top;
+		input {
+			background: none transparent;
+			width: 100%;
+			padding: 9px 10px !important;
+		}
+	}
+	.button-wrap {
+		display: table-cell;
+		vertical-align: top;
+		input, button {
+			box-sizing: border-box;
+			white-space: nowrap;
+			height: 40px;
+			line-height: 40px;
+			padding: 0 25px !important;
+			letter-spacing: 0 !important;
+			font-weight: 400 !important;
+		}
+	}
+	&.polar-shape-rounded {
+		&:before {
+			.lh-border-radius( @border-radius-value );
+		}
+		.button-wrap {
+			input, button {
+				.lh-border-radius( @border-radius-value );
+			}
+		}
+	}
+	&.polar-shape-square {
+		&:before {
+			.lh-border-radius( 0 );
+		}
+		.button-wrap {
+			input, button {
+				.lh-border-radius( 0 );
+			}
+		}
+	}
+}

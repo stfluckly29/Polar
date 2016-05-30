@@ -1,0 +1,40 @@
+// wider conditions must come first due to css priority
+@media screen and ( max-width: @screen-sm1 ) {
+	.polar-post.single {
+		// Post author
+		.post-author {
+			.avatar-wrapper {
+				width: 120px;
+			}
+		}
+	}
+}
+@media screen and ( max-width: @screen-xs1 ) {
+	// Small-thumb post
+	.post-small-thumb {
+		.col-post-media,
+		.col-post-content {
+			width: 100%;
+		}
+		.col-post-media {
+			margin-bottom: 23px;
+		}
+	}
+	.polar-post.single {
+		// Post author
+		.post-author {
+			display: block;
+			.avatar-wrapper,
+			info {
+				display: block;
+			}
+			.avatar-wrapper {
+				width: 170px;
+				margin-bottom: 30px;
+			}
+			.margin {
+				display: none;
+			}
+		}
+	}
+}

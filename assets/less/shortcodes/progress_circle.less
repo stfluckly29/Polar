@@ -1,0 +1,51 @@
+/*** Progress Circle **/
+.polar_progress_circle {
+	z-index: 0;
+	text-align: center;
+	margin: 0 auto;
+	max-width: 220px;
+	//min-width: 170px;
+	.lh-opacity(0);
+	&.polar_ready {
+		.lh-opacity(1);
+	}
+	.polar_pc_wrapper {
+		position: relative;
+		margin: 0 auto;
+	}
+	canvas {
+		position: relative;
+		z-index: 1;
+	}
+	.polar_pc_value {
+		font-size: 30px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: table;
+		vertical-align: middle;
+		width: 100%;
+		height: 100%;
+		padding: 16%;
+		text-align: center;
+		line-height: 1;
+		> .value {
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+	.polar_pc_heading {
+		margin: 25px 0 0 0 !important;
+		text-transform: uppercase;
+	}
+}
+
+/* Overridables */
+.polar_progress_circle {
+	.polar_pc_value {
+		&:extend( .polar-primary-color );
+	}
+	.polar_pc_heading {
+		&:extend( .polar-text-font-size );
+	}
+}

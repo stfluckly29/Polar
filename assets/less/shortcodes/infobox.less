@@ -1,0 +1,62 @@
+.polar_infobox {
+	padding: 30px;
+	position: relative;
+	hgroup {
+		//margin-bottom: 35px;
+		margin-bottom: 65px;
+	}
+	.infobox-title {
+		margin-bottom: 0;
+	}
+	.infobox-subtitle {
+		line-height: 1;
+		margin-bottom: 0;
+		&:extend(.polar-text-font-weight);
+	}
+	.infobox-content {
+		width: 100%;
+	}
+	.infobox-btn-wrap {
+		margin-top: 30px;
+	}
+	&.polar-style-box {
+		.infobox-content-wrap {
+			.lh-transition(opacity .3s);
+		}
+		.infobox-back {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			background-color: rgba(0, 0, 0, .25);
+			text-align: center;
+			.lh-opacity(0);
+			.lh-transition(all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.075s);
+			i {
+				font-size: 48px;
+				width: 48px;
+				position: absolute;
+				.vcenter();
+				left: 30%;
+				margin-left: -24px;
+				color: white;
+				.lh-transition(all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.075s);
+			}
+		}
+		&:hover {
+			.infobox-content-wrap {
+				.lh-opacity(0);
+			}
+			.infobox-back {
+				.lh-opacity(1);
+				i {
+					left: 50%;
+				}
+			}
+		}
+	}
+	&.polar-inbobox-shadow {
+		.lh-box-shadow(0 5px 40px rgba(0, 0, 0, .1));
+	}
+}

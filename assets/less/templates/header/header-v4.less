@@ -1,0 +1,89 @@
+.header-v4 {
+	position: relative;
+	.main-menu-area-wrapper {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+	}
+	.main-menu-bar {
+		margin-top: 45px;
+		display: table;
+		width: 100%;
+	}
+	.bar-part {
+		padding: 0 25px;
+		display: table-cell;
+		vertical-align: middle;
+		&.space {
+			width: 20px;
+			padding: 0 !important;
+		}
+		&.background {
+			&:extend( .polar-header-bg-color-light );
+			.lh-box-shadow( 0 2px 8px 0 rgba( 0, 0, 0, 0.08 ) );
+			.lh-transition( background-color 0.5s ease-in );
+		}
+		&.icons {
+			font-size: 24px;
+			text-align: center;
+			position: relative;
+			width: 90px;
+		}
+	}
+	.logo-wrapper,
+	.main-menu-wrapper {
+		&:extend( .polar-header-v4-height );
+	}
+	// Main menu item height
+	ul.menu > li {
+		display: table;
+		&:extend( .polar-header-v4-height );
+		.lh-transition( background-color 0.3s );
+		& > a {
+			display: table-cell;
+			vertical-align: middle;
+		}
+		& > .sub-menu {
+			left: 0;
+			top: 100%;
+			margin-top: 0;
+		}
+		& > .crf-megamenu-wrapper {
+			top: 100%;
+			margin-top: 0;
+		}
+		&:hover {
+			&:extend( .polar-primary-color-bg-color );
+			& > a {
+				color: #fff;
+			}
+		}
+	}
+	// Sticky
+	.polar-sticky-menu {
+		.lh-transition( none );
+	}
+	.sticky {
+		.main-menu-bar {
+			margin-top: 0;
+		}
+		.polar-search-form {	// Search box on sticky
+			margin-top: 20px;
+		}
+		.bar-part.background {
+			.lh-box-shadow( none );
+		}
+		&.dark {	// Dark sticky menu
+			.bar-part.background {
+				&:extend( .polar-header-bg-color-dark );
+			}
+		}
+	}
+	// Dark skin
+	&.dark {
+		.bar-part.background {
+			&:extend( .polar-header-bg-color-dark );
+		}
+	}
+}

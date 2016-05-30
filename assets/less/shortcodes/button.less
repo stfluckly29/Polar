@@ -1,0 +1,372 @@
+/* Variables */
+
+@polar-button-border-radius-round: 4em;
+@polar-button-border-radius-rounded: 4px;
+
+@polar-button-border-base: 1px;
+@polar-button-border-outline-thin: 1px;
+@polar-button-border-outline-medium: 2px;
+@polar-button-border-outline-thick: 3px;
+
+//@polar-button-shadow-width-3d: 5px; //moved to variables.less
+
+// Button xs
+@polar-button-xs-padding-horizontal: 20px;
+@polar-button-xs-padding-vertical: 12px;
+@polar-button-xs-font-size: 14px;
+// Button sm
+@polar-button-sm-padding-horizontal: 25px;
+@polar-button-sm-padding-vertical: 15px;
+@polar-button-sm-font-size: 14px;
+// Button md (default)
+@polar-button-md-padding-horizontal: 35px;
+@polar-button-md-padding-vertical: 18px;
+@polar-button-md-font-size: 15px;
+// Button lg
+@polar-button-lg-padding-horizontal: 45px;
+@polar-button-lg-padding-vertical: 20px;
+@polar-button-lg-font-size: 17px;
+// Button xl
+@polar-button-xl-padding-horizontal: 55px;
+@polar-button-xl-padding-vertical: 24px;
+@polar-button-xl-font-size: 18px;
+
+@polar-button-style-white-border: #ccd3e1;
+
+// primary
+@polar-def-btn-text-color: white;
+
+//========== Mixins
+// Button sizes
+.polar-make-size( @font-size: false; @padding-vertical: false; @padding-horizontal: false; ) {
+	& when not (@font-size = false) {
+		font-size: @font-size;
+	}
+	& when not (@padding-vertical = false) {
+		padding-top: @padding-vertical;
+		padding-bottom: @padding-vertical;
+	}
+	& when not (@padding-horizontal = false) {
+		padding-left: @padding-horizontal;
+		padding-right: @padding-horizontal;
+	}
+	&.polar-style-flat {
+		& when not (@padding-vertical = false) {
+			padding-top: @padding-vertical + @polar-button-border-base;
+			padding-bottom: @padding-vertical + @polar-button-border-base;
+		}
+		& when not (@padding-horizontal = false) {
+			padding-left: @padding-horizontal + @polar-button-border-base;
+			padding-right: @padding-horizontal + @polar-button-border-base;
+		}
+	}
+	&.polar-style-outline {
+		&.polar-border-medium {
+			& when not (@padding-vertical = false) {
+			padding-top: @padding-vertical - @polar-button-border-outline-medium + @polar-button-border-base;
+			padding-bottom: @padding-vertical - @polar-button-border-outline-medium + @polar-button-border-base;
+			}
+			& when not (@padding-horizontal = false) {
+				padding-left: @padding-horizontal - @polar-button-border-outline-medium + @polar-button-border-base;
+				padding-right: @padding-horizontal - @polar-button-border-outline-medium + @polar-button-border-base;
+			}
+		}
+		&.polar-border-thick {
+			& when not (@padding-vertical = false) {
+			padding-top: @padding-vertical - @polar-button-border-outline-thick + @polar-button-border-base;
+			padding-bottom: @padding-vertical - @polar-button-border-outline-thick + @polar-button-border-base;
+			}
+			& when not (@padding-horizontal = false) {
+				padding-left: @padding-horizontal - @polar-button-border-outline-thick + @polar-button-border-base;
+				padding-right: @padding-horizontal - @polar-button-border-outline-thick + @polar-button-border-base;
+			}
+		}
+	}
+}
+
+// Button styles start
+
+// Button Core
+
+.polar_button, input[type=submit] {
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+	color: @polar-def-btn-text-color;
+	border: @polar-button-border-base solid transparent;
+	box-sizing: border-box;
+	word-wrap: break-word;
+	.lh-user-select(none);
+	text-decoration: none;
+	font-weight:bold;
+	position: relative;
+	text-transform: uppercase;
+	.lh-transition(all 0.2s ease-in-out);
+	line-height: 1;
+	-webkit-appearance: none;
+	padding: @polar-button-md-padding-vertical @polar-button-md-padding-horizontal;
+	font-size: inherit;
+	// Styling as Modern by default.
+	
+	background-clip: border-box;
+
+	margin: 0 20px 0 0;
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&:focus,
+	&:active {
+		outline: 0;
+	}
+
+	&:hover,
+	&:focus {
+		color: @polar-def-btn-text-color;
+		border: @polar-button-border-base solid transparent;
+		text-decoration: none;
+	}
+
+	// icon
+	.polar-icon {
+		vertical-align: middle;
+		line-height: 1;
+	}
+
+	//===== icon positions
+	&.polar-icon-left {
+		.polar-icon {
+			margin-right: .5em;
+		}
+	}
+	&.polar-icon-right {
+		.polar-icon {
+			margin-left: .5em;
+		}
+	}
+	//===== Styles
+
+	// Modern
+	&.polar-style-modern {
+		.lh-background-image( linear-gradient( top, rgba(255, 255, 255, .2) 0%, rgba(255, 255, 255, .01) ) );
+		text-shadow: 1px 1px rgba(0, 0, 0, .25);
+		border-color: transparent !important;
+	}
+	// Flat (default)
+	&.polar-style-flat {
+		//text-shadow: 1px 1px rgba(0, 0, 0, .25);
+		border: none;
+		.lh-background-image( none );
+	}
+	&.polar-style-3d {
+		text-shadow: 1px 1px rgba(0, 0, 0, .25);
+		border: none;
+		top: 0;
+		.lh-background-image( none );
+	}
+	// Outline
+	&.polar-style-outline {
+		//.lh-background-image( none );
+		background-color: transparent;
+		&, &:hover, &:focus {
+			color: @polar-def-btn-text-color;
+			border-width: @polar-button-border-outline-thin;
+		}
+		&:hover, &:active {
+			border-color: transparent !important;
+		}
+		&.polar-border-medium {
+			&, &:hover, &:focus {
+				border-width: @polar-button-border-outline-medium;
+			}
+		}
+		&.polar-border-thick {
+			&, &:hover,	&:focus {
+				border-width: @polar-button-border-outline-thick;
+			}
+		}
+		&.polar-border-dashed {
+			border-style: dashed;
+		}
+		&.polar-border-dotted {
+			border-style: dotted;
+		}
+	}
+	&.polar-style-transparent {
+		//.lh-background-image( none );
+		background-color: transparent !important;
+		border-color: transparent !important;
+		padding: 0 !important;
+	}
+	
+	&.polar-custom {
+		text-shadow: 1px 1px rgba(0, 0, 0, .25);
+		position: relative;
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			.lh-border-radius(inherit);
+			.lh-transition(background-color 0.3s);
+		}
+		&:hover:after, &:focus:after {
+			background-color:rgba(255, 255, 255, 0.1);
+		}
+		&:active:after {
+			background-color:rgba(0, 0, 0, 0.1);
+		}
+	}
+
+	//===== Block button
+	&.polar-block {
+		display: block;
+		width: 100%;
+		text-align: inherit;
+	}
+
+	//===== Shapes
+
+	// Square Shape
+	&.polar-shape-square {
+		.lh-border-radius(0);
+	}
+	// Rounded Shape
+	&.polar-shape-rounded {
+		.lh-border-radius(@polar-button-border-radius-rounded);
+	}
+	// Round Shape
+	&.polar-shape-round {
+		.lh-border-radius(@polar-button-border-radius-round);
+	}
+
+	//===== Button Sizes
+	// XS size
+	&.polar-size-xs {
+		.polar-make-size(@polar-button-xs-font-size, @polar-button-xs-padding-vertical, @polar-button-xs-padding-horizontal);
+	}
+	// SM size
+	&.polar-size-sm {
+		.polar-make-size(@polar-button-sm-font-size, @polar-button-sm-padding-vertical, @polar-button-sm-padding-horizontal);
+	}
+	// MD size
+	&.polar-size-md {
+		.polar-make-size(@polar-button-md-font-size, @polar-button-md-padding-vertical, @polar-button-md-padding-horizontal);
+	}
+	// LG size
+	&.polar-size-lg {
+		.polar-make-size(@polar-button-lg-font-size, @polar-button-lg-padding-vertical, @polar-button-lg-padding-horizontal);
+	}
+	// XL size
+	&.polar-size-xl {
+		.polar-make-size(@polar-button-xl-font-size, @polar-button-xl-padding-vertical, @polar-button-xl-padding-horizontal);
+	}
+
+	&.polar-style-3d {
+		&:active:focus {
+			top: @polar-button-shadow-width-3d;
+		}
+	}
+}
+
+//========== Align & Full
+.polar_button_container, .vc_polar_button {
+	display: block;
+	line-height: 1;
+	max-width: 100%;
+	.polar_button, input[type=submit]{
+		margin: 0;
+	}
+	&.polar-align-inline {
+		display: inline-block;
+	}
+	&.polar-align-center {
+		text-align: center;
+	}
+	&.polar-align-left {
+		text-align: left;
+	}
+	&.polar-align-right {
+		text-align: right;
+	}
+	&:not(.polar-align-inline:last-child) {
+		margin-bottom: 10px;
+	}
+
+	// Fix for block button
+	&.polar-align-full {
+		text-align:center;
+		.polar_button {
+			width: 100%;
+			&.polar-icon-left,
+			&.polar-icon-right {
+				.polar-icon {
+					display: inline-block;
+				}
+				.polar-icon {
+					-webkit-transform: translate(0, 0);
+					-ms-transform: translate(0, 0);
+					transform: translate(0, 0);
+					min-width: 1em;
+				}
+			}
+		}
+	}
+	.polar-block {
+		&.polar-icon-left,
+		&.polar-icon-right {
+			text-align: inherit;
+		}
+	}
+	&.polar-no-caption {
+		i {
+			margin: 0 !important;
+		}
+	}
+}
+
+.polar_button_container.polar-align-inline,
+.vc_polar_button.polar-align-inline .polar_button_container {
+	margin-bottom: 0;
+}
+
+/* Button Overridables */
+.polar_button, input[type=submit] {
+	// default as primary
+	&:extend(.polar-primary-color-bg-color);
+	&:extend(.polar-primary-color-border-color);
+	&:hover, &:focus {
+		&:extend(.polar-primary-hover-color-bg-color);
+	}
+	&:active:focus {
+		&:extend(.polar-primary-active-color-bg-color);
+	}
+	&.polar-style-outline {
+		&:extend(.polar-primary-color);
+		&:hover, &:focus {
+			&:extend(.polar-primary-color-bg-color);
+		}
+	}
+	&.polar-style-transparent {
+		&:extend(.polar-primary-color);
+		&:hover, &:focus {
+			&:extend(.polar-primary-hover-color-important);
+			&.polar-custom-color {
+				&:extend(.polar-primary-color-important);
+			}
+		}
+	}
+
+	&.polar-style-3d {
+		&:active:focus {
+			top: @polar-button-shadow-width-3d;
+			box-shadow: none !important;
+		}
+		&:extend(.polar-primary-button-boxshadow);
+	}
+	&:extend(.polar-heading-font);
+}

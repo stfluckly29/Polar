@@ -1,0 +1,101 @@
+.clearfix ( @type: both ) {
+	&:after {
+		content: '';
+		display: table;
+		clear: @type;
+		zoom: 1;
+	}
+}
+
+.vhcenter() {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	.lh-transform ( translateX(-50%), translateY(-50%) );
+}
+
+.vcenter() {
+	position: absolute;
+	top: 50%;
+	.lh-transform ( translateY(-50%) );
+}
+
+.hcenter() {
+	position: absolute;
+	left: 50%;
+	.lh-transform ( translateX(-50%) );
+}
+
+.valign-middle-container() {
+	&:before {
+		display: inline-block;
+		content: '';
+		height: 100%;
+		vertical-align: middle;
+	}
+}
+
+.valign-middle() {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.zindex( @value, @base: 'content' ) {
+	@zindex-base: "zindex-base-@{base}";
+	z-index: @@zindex-base + @value;
+}
+
+.placeholder( @rules ) {
+	&::-webkit-input-placeholder {
+		@rules();
+	}
+	&:-moz-placeholder {
+		@rules();
+	}
+	&::-moz-placeholder {
+		@rules();
+	}
+	&:-ms-input-placeholder {
+		@rules();
+	}
+}
+
+.fa() {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);
+}
+
+.ionicons() {
+	font-family: "Ionicons";
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1;
+	text-transform: none;
+}
+
+.eleganticons() {
+	font-family: "ElegantIcons";
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.grab-cursor() {
+	cursor: -webkit-grab;
+	cursor: -moz-grab;
+	.lh-user-select(none);
+	&:active {
+		cursor: -webkit-grabbing;
+		cursor: -moz-grabbing;
+	}
+}

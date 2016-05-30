@@ -1,0 +1,19 @@
+.crf-widget {
+	&:not(:last-child) {
+		margin-bottom: 60px;
+	}
+	.widget-title {
+		margin-bottom: 45px;
+		&:extend( .polar-widget-title-font-size );
+		&:extend( .polar-blog-heading-color );
+		&:extend( .polar-bold-heading );
+	}
+}
+
+// Footer widgets
+footer .crf-widget {
+	.widget-title {
+		&:extend( .polar-footer-heading-color );
+		&:extend( .polar-footer-widget-title-font-size );
+	}
+}

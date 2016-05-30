@@ -1,0 +1,32 @@
+.header-v3 {
+	position: relative;
+	.main-menu-area-wrapper {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			&:extend( .polar-header-bg-color-dark );
+			opacity: 0.3;
+			.lh-transition( opacity 0.3s, background-color 0.5s );
+		}
+		&.sticky {
+			&:before {
+				opacity: 0;
+			}
+		}
+	}
+	// Dark skin
+	&.light {
+		.main-menu-area-wrapper:before {
+			&:extend( .polar-header-bg-color-light );
+		}
+	}
+}

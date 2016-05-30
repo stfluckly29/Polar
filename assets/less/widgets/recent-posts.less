@@ -1,0 +1,54 @@
+.polar-widget-recent-posts {
+	ul {
+		list-style: none;
+		padding-left: 0;
+		margin: 0;
+	}
+	li {
+		padding-bottom: 19px;
+		border-width: 0 0 1px;
+		border-style: dashed;
+		&:extend( .polar-widget-border-color );
+		&:not(:first-child) {
+			padding-top: 19px;
+		}
+		.post-row {
+			display: table;
+			width: 100%;
+		}
+		.thumb {
+			background-size: cover;
+			width: 80px;
+			height: 64px;
+			display: table-cell;
+		}
+		.content {
+			display: table-cell;
+			.title {
+				&:extend( .polar-blog-heading-color );
+				font-size: 15px;	///
+				letter-spacing: 0.4px;
+				margin-bottom: 5px;
+			}
+			.date {
+				&:extend( .polar-text-color2 );
+				font-size: 13px;	///
+			}
+		}
+		&.has-thumb .content {
+			padding-left: 18px;
+		}
+	}
+}
+
+footer .polar-widget-recent-posts {
+	li {
+		border-style: solid;
+		&:extend( .polar-footer-border-color );
+		.content {
+			.title {
+				&:extend( .polar-footer-text-color );
+			}
+		}
+	}
+}

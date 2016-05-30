@@ -1,0 +1,19 @@
+.woocommerce .woocommerce-message,
+.woocommerce .woocommerce-info,
+.woocommerce .woocommerce-error {
+	padding: 2em 3em !important;
+	margin-bottom: 50px !important;
+    text-transform: uppercase;
+	border: 0;
+	&:extend( .polar-heading-font );
+	&:extend( .polar-bg-color2 );
+	&:extend( .polar-heading-color );
+	&:extend( .polar-text-font-size-m_1 );
+	a.button {
+		padding: .8em 1.6em;
+		&:extend( .polar-text-font-size-m_2 );
+	}
+	&:before {
+		content: none;
+	}
+}

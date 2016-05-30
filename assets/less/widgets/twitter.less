@@ -1,0 +1,51 @@
+.polar-widget-tweets {
+	.polar-tweet-container {
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+		.desc {
+			line-height: 2;
+		}
+		.date {
+			color: inherit;
+			margin-top: 12px;
+			&:extend( .polar-blog-meta-font-size );
+			&:extend( .polar-bold-heading );
+			&:extend( .polar-heading-font );
+			a {
+				opacity: 0.4;
+				.lh-transition( opacity 0.3s, color 0.3s );
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	.view-all-tweets {
+		display: inline-block;
+		margin-top: 30px;
+		&:extend( .polar-blog-meta-font-size );
+		&:extend( .polar-bold-heading );
+		&:extend( .polar-heading-font );
+		i {
+			font-size: 15px;
+			vertical-align: -15%;
+			margin-left: 8px;
+		}
+	}
+}
+
+footer .polar-widget-tweets {
+	.polar-tweet-container {
+		.date {
+			color: inherit;
+			a {
+				opacity: 0.6;
+				.lh-transition( opacity 0.3s, color 0.3s );
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

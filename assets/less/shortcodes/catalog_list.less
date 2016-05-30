@@ -1,0 +1,46 @@
+.polar_catalog_list {
+	.title,
+	.separator,
+	.price {
+		display: table-cell;
+	}
+	.title {
+		white-space: nowrap;
+		.lh-transition(all .3s);
+	}
+	.separator {
+		width: 100%;
+		position: relative;
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 10px;
+			width: 100%;
+			height: 1px;
+			border-bottom: 3px dotted;
+		}
+	}
+	.price {
+		padding-left: 10px;
+		max-width: 20%;
+		min-width: 50px;
+		text-align: center;
+	}
+	.catalog-item {
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+}
+/* Catalog List Overridables */
+.polar_catalog_list {
+	.title-wrap:hover {
+		.title {
+			&:extend(.polar-primary-color);
+		}
+	}
+	.price {
+		&:extend( .polar-h5-font-size );
+	}
+}

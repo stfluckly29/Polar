@@ -1,0 +1,76 @@
+footer {
+	&:extend( .polar-footer-text-color );
+	&:extend( .polar-footer-text-font-size );
+	&:extend( .polar-footer-text-line-height );
+	&:extend( .polar-footer-widget-area-bg-color );
+	a {
+		color: inherit;
+		&:hover {
+			&:extend( .polar-footer-hover-color );
+		}
+	}
+
+	// Widget area
+	.widget-area {
+		&:extend( .polar-footer-widget-area-padding );
+	}
+	
+	// Bottom bar
+	.bottom-bar {
+		&:extend( .polar-footer-bottom-bar-bg-color );
+		& > .container {
+			position: relative;
+			&:extend( .polar-footer-bottom-bar-padding );
+		}
+		.copyright-text {
+			a {
+				&:extend( .polar-footer-hover-color );
+				&:hover {
+					&:extend( .polar-primary-color );
+				}
+			}
+		}
+		.totop {
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			margin-top: -18px;
+			width: 36px;
+			height: 36px;
+			line-height: 36px;
+			font-size: 18px;
+			text-align: center;
+			border: 2px solid;
+			border-color: #666;		/// needs to be variable-based
+			.lh-transition( opacity 0.3s, color 0.3s );
+			&:hover {
+				opacity: 0.6;
+			}
+		}
+	}
+	
+	// Extra
+	.polar-footer-4col-layout-fix {
+		display: none;
+	}
+	input[type=color],
+	input[type=date],
+	input[type=email],
+	input[type=number],
+	input[type=password],
+	input[type=range],
+	input[type=search],
+	input[type=tel],
+	input[type=text],
+	input[type=time],
+	input[type=url],
+	input[type=week] {
+		border: 0;
+		color: inherit;
+		&:extend( .polar-footer-element-bg-color );
+		.placeholder( {
+			font-style: italic;
+		} );
+	}
+}

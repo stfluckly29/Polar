@@ -1,0 +1,19 @@
+.widget_search {
+	.screen-reader-text,
+	.search-submit {
+		display: none;
+	}
+	.search-field {
+		border: 0;
+		color: inherit;
+		&:extend( .polar-bg-color2 );
+		.placeholder( {
+			font-style: italic;
+		} );
+	}
+}
+footer .widget_search {
+	.search-field {
+		&:extend( .polar-footer-element-bg-color );
+	}
+}

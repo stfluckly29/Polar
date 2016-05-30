@@ -1,0 +1,35 @@
+.header-v2 {
+	&:extend( .polar-header-bg-color-light );
+	.topbar {
+		&:extend( .polar-bg-color2 );
+		.right {
+			.social-icon {
+				margin-left: 16px;
+			}
+			a.login {
+				margin-left: 6px;
+				padding: 0;
+			}
+			i {
+				vertical-align: -11%;
+			}
+		}
+		.sep {
+			margin: 0 18px 0 19px;
+		}
+	}
+	& > .container {
+		.clearfix;
+	}
+	.main-menu-area {
+		&:extend( .polar-header-bg-color-light );
+		.lh-box-shadow( 0 4px 4px -2px rgba(0,0,0,.15) );
+	}
+	// Dark skin
+	&.dark {
+		&:extend( .polar-header-bg-color-dark );
+		.main-menu-area {
+			&:extend( .polar-header-bg-color-dark );
+		}
+	}
+}

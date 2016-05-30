@@ -1,0 +1,88 @@
+.polar_counterbox {
+	&.polar-style-number {
+		.cb-value {
+			font-size: 40px;
+		}
+	}
+	&.polar-style-number-text {
+		.cb-value {
+			font-size: 40px;
+			line-height: 1;
+		}
+		.cb-text {
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			margin-top: 20px;
+		}
+	}
+	&.polar-style-icon-number-text {
+		.cb-icon {
+			font-size: 30px;
+			line-height: 1;
+			margin-bottom: 10px;
+		}
+		.cb-value {
+			font-size: 30px;
+			line-height: 1;
+		}
+		.cb-text {
+			margin-top: 10px;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+		}
+	}
+	&.polar-style-inline-number-text {
+		text-align: center;
+		.cb-value-wrap {
+			position: relative;
+			display: inline-block;
+		}
+		.cb-value, .cb-value-hidden {
+			font-size: 40px;
+			line-height: 1;
+		}
+		.cb-value {
+			text-align: right;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		.cb-value-hidden {
+			visibility: hidden;
+		}
+		.cb-text {
+			line-height: 1;
+			letter-spacing: 2px;
+			display: inline-block;
+			text-transform: uppercase;
+			&:before {
+				font-size: 20px;
+				content: '/';
+			}
+		}
+	}
+	&.polar-hover-trans {
+		.lh-transition( background-color .5s );
+		.cb-value, .cb-text, .cb-icon {
+			.lh-transition( color .3s );
+		}
+		&.polar-primary-bg-hover-trans:hover {
+			.cb-value, .cb-text, .cb-icon {
+				color: white;
+			}
+		}
+	}
+}
+/* Counterbox Overridables */
+.polar_counterbox {
+	&:extend(.polar-heading-font);
+	&:extend(.polar-heading-font-weight);
+	.cb-value {
+		&:extend(.polar-heading-color);
+	}
+	&.polar-hover-trans:hover {
+		&.polar-primary-bg-hover-trans {
+			&:extend(.polar-primary-color-bg-color-important);
+		}
+	}
+}

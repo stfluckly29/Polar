@@ -1,0 +1,42 @@
+@dropcap-def-fontsize:			60px;
+@dropcap-boxed-fontsize:		30px;
+@dropcap-boxed-wrapper-size:	50px;
+@dropcap-font-weight:			700;
+@dropcap-line-height-offset:	( @text_line_height * @text_font_size - @text_font_size ) / 2;
+
+.polar_dropcap {
+	margin: @dropcap-line-height-offset 15px @dropcap-line-height-offset 0;
+	font-weight: @dropcap-font-weight;
+	display: inline-block;
+	float: left;
+	position: relative;
+	text-transform: uppercase;
+	text-align: center;
+	& {
+		&:extend(.polar-primary-color);
+		font-size: @dropcap-def-fontsize;
+		line-height: 1;
+	}
+
+	&.polar-solid-square, &.polar-solid-circle {
+		&:extend(.polar-primary-color-bg-color);
+		color: white;
+		font-size: @dropcap-boxed-fontsize;
+		width: @dropcap-boxed-wrapper-size;
+		line-height: @dropcap-boxed-wrapper-size;
+	}
+	&.polar-outlined-square, &.polar-outlined-circle {
+		&:extend(.polar-primary-color);
+		&:extend(.polar-border-color);
+		font-size: @dropcap-boxed-fontsize;
+		border-width: 1px;
+		border-style: solid;
+		width: @dropcap-boxed-wrapper-size;
+		line-height: @dropcap-boxed-wrapper-size;
+	}
+
+	&.polar-solid-circle, &.polar-outlined-circle {
+		.lh-border-radius(1000px);
+	}
+
+}

@@ -1,0 +1,42 @@
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+	border-radius: 0;
+	border: 1px solid transparent;
+	text-transform: uppercase;
+	.lh-box-sizing( border-box );
+	&:extend( .polar-heading-font );
+	&:extend( .polar-wc-button-bg-color );
+	&:extend( .polar-wc-button-text-color );
+	&:extend( .polar-wc-heading-font-weight );
+	.lh-transition( background-color 0.3s, color 0.3s );
+	&:hover {
+		&:extend( .polar-wc-button-hover-bg-color );
+		&:extend( .polar-wc-button-text-color );
+	}
+	&.outlined {
+		border: 1px solid;
+		&:extend( .polar-wc-button-bg-color-border-color );
+		&:extend( .polar-wc-button-bg-color-text-color );
+		background: 0;
+		.lh-transition( background-color 0.3s, color 0.3s, border-color 0.3s );
+		&:hover {
+			&:extend( .polar-wc-button-bg-color );
+			&:extend( .polar-wc-button-text-color );
+		}
+	}
+}
+
+.woocommerce .star-rating-container {
+	.star-rating {
+		width: 6em;
+		letter-spacing: 2px;
+		&:before {
+			content: "\53\53\53\53\53";
+		}
+		span:before {
+			color: @wc-star-color;
+		}
+	}
+}

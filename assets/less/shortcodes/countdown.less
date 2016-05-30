@@ -1,0 +1,211 @@
+@countdown-digit-fontsize1:			120px;
+@countdown-digit-wrapsize1:			180px;
+
+@countdown-digit-fontsize2:			40px;
+@countdown-digit-wrapsize2:			70px;
+
+@countdown-digit-fontsize3:			30px;
+@countdown-digit-wrapsize3:			@countdown-digit-fontsize3 * 2 + 10px;
+
+@countdown-digit-fontsize4:			30px;
+@countdown-digit-wrapsize4:			@countdown-digit-fontsize4 * 3;
+
+@countdown-digit-fontsize5:			40px;
+@countdown-digit-wrapsize5:			130px;
+
+.polar_countdown {
+	&.polar-style1 {
+		.countdown-inner {
+			margin: -15px;
+			font-size: 0;
+		}
+		.element {
+			display: inline-block;
+			padding: 15px;
+			text-align: center;
+			font-size: @countdown-digit-fontsize1;
+		}
+		.digit {
+			//min-width: @countdown-digit-wrapsize1;
+			padding: 0 30px;
+			.lh-box-sizing(content-box);
+			line-height: 1;
+			margin: 0 auto;
+			display: block;
+			position: relative;
+			&:extend(.polar-heading-color);
+			&:extend(.polar-heading-font-weight);
+		}
+		.element:not(.seconds) .digit {
+			&:after {
+				content: ':';
+				position: absolute;
+				width: 30px;
+				right: -30px;
+				line-height: 1;
+				top: 0;
+				text-align: center;
+				display: block;
+			}
+		}
+		.unit {
+			display: block;
+			margin-top: 10px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			&:extend(.polar-heading-font);
+			&:extend(.polar-h6-font-size);
+			&:extend(.polar-heading-font-weight);
+		}
+	}
+}
+@media (min-width: 580px) and (max-width: 992px) {
+	.polar_countdown {
+		&.polar-style1 {
+			.digit {
+				font-size: 50%;
+				padding: 0 15px;
+			}
+		}
+	}
+}
+@media (max-width: 579px) {
+	.polar_countdown {
+		&.polar-style1 {
+			.element {
+				display: block;
+				margin: 0 auto;
+			}
+			.element:not(.seconds) .digit {
+				&:after {
+					content: '';
+				}
+			}
+		}
+	}
+}
+
+.polar_countdown {
+	&.polar-style2 {
+		.countdown-inner {
+			margin: -15px;
+		}
+		.element {
+			display: inline-block;
+			padding: 15px;
+			text-align: center;
+		}
+		.digit {
+			font-size: @countdown-digit-fontsize2;
+			min-width: @countdown-digit-wrapsize2;
+			line-height: 1;
+			margin: 0 auto;
+			display: block;
+			.lh-border-radius(50%);
+			&:extend(.polar-heading-font);
+			&:extend(.polar-heading-color);
+			&:extend(.polar-heading-font-weight);
+		}
+		.unit {
+			display: block;
+			margin-top: 10px;
+			font-style: italic;
+			&:extend(.polar-text-color2);
+		}
+	}
+	&.polar-style3 {
+		.countdown-inner {
+			margin: -15px;
+		}
+		.element {
+			display: inline-block;
+			padding: 15px;
+			text-align: center;
+		}
+		.digit {
+			font-size: @countdown-digit-fontsize3;
+			min-width: @countdown-digit-wrapsize3;
+			height: @countdown-digit-wrapsize3;
+			line-height: @countdown-digit-wrapsize3;
+			margin: 0 auto;
+			display: block;
+			.lh-box-shadow(0 0 5px rgba(0,0,0,.1));
+			&:extend(.polar-heading-color);
+			&:extend(.polar-heading-font-weight);
+			&:extend(.polar-bg-color);
+		}
+		.unit {
+			display: block;
+			margin-top: 10px;
+			&:extend(.polar-text-font-size-m_1);
+		}
+	}
+	&.polar-style4 {
+		.countdown-inner {
+			margin: -15px;
+		}
+		.element {
+			display: inline-block;
+			padding: 15px;
+			text-align: center;
+		}
+		.digit {
+			font-size: @countdown-digit-fontsize4;
+			min-width: @countdown-digit-wrapsize4;
+			height: @countdown-digit-wrapsize4;
+			line-height: @countdown-digit-wrapsize4;
+			margin: 0 auto;
+			display: block;
+			border-style: solid;
+			border-width: 3px;
+			.lh-border-radius(50%);
+			&:extend(.polar-heading-color);
+			&:extend(.polar-heading-font);
+			&:extend(.polar-heading-font-weight);
+			&:extend(.polar-text-color2-border-color);
+		}
+		.unit {
+			display: block;
+			margin-top: 10px;
+			font-style: italic;
+			&:extend(.polar-text-color2);
+		}
+	}
+	&.polar-style5 {
+		.countdown-inner {
+			font-size: 0;
+		}
+		.element {
+			display: inline-block;
+			padding: 5px 15px;
+			text-align: center;
+			border-width: 1px;
+			&:extend(.polar-border-color);
+			margin-right: -1px;
+			&:not(:last-child) {
+				border-right-style: solid;
+			}
+			&:not(:first-child) {
+				border-left-style: solid;
+			}
+		}
+		.digit {
+			font-size: @countdown-digit-fontsize5;
+			min-width: @countdown-digit-wrapsize5;
+			line-height: 1;
+			margin: 0 auto;
+			display: block;
+			.lh-border-radius(50%);
+			&:extend(.polar-heading-color);
+			&:extend(.polar-heading-font);
+			&:extend(.polar-heading-font-weight);
+		}
+		.unit {
+			display: block;
+			margin-top: 10px;
+			font-style: italic;
+			&:extend(.polar-text-color2);
+			&:extend(.polar-text-font-size);
+		}
+	}
+}

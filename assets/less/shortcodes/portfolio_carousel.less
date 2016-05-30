@@ -1,0 +1,149 @@
+.polar_portfolio_carousel {
+	.polar-filter-heading .heading {
+		&:extend( .polar-blog-heading-color );
+	}
+	.polar-isotope-filter {
+		a {
+			position: relative;
+			display: inline-block;
+			padding: 4px 14px;
+			&:extend( .polar-blog-heading-color );
+			&:hover {
+				&:extend( .polar-primary-color );
+			}
+			&.active {
+				border-width: 2px 0 0 2px;
+				&:extend( .polar-primary-color );
+				.rect1,
+				.rect2 {
+					&:before,
+					&:after {
+						opacity: 1;
+					}
+				}
+			}
+			&:not(:last-child) {
+				margin-right: 20px;
+			}
+			.rect1,
+			.rect2 {
+				&:before,
+				&:after {
+					content: '';
+					&:extend( .polar-primary-color-border-color );
+					border-style: solid;
+					opacity: 0;
+					will-change: opacity;
+					.lh-transition( opacity 0.5s );
+					position: absolute;
+					width: 8px;
+					height: 8px;
+				}
+			}
+			.rect1 {
+				&:before {
+					left: 0;
+					top: 0;
+					border-width: 2px 0 0 2px;
+				}
+				&:after {
+					right: 0;
+					top: 0;
+					border-width: 2px 2px 0 0;
+				}
+			}
+			.rect2 {
+				&:before {
+					left: 0;
+					bottom: 0;
+					border-width: 0 0 2px 2px;
+				}
+				&:after {
+					right: 0;
+					bottom: 0;
+					border-width: 0 2px 2px 0;
+				}
+			}
+		}
+	}
+	.polar-portfolio-carousel-wrapper {
+		position: relative;
+		&.not-loaded {
+			height: 0;
+			overflow: hidden;
+		}
+	}
+	.polar-portfolio-carousel {
+		margin-bottom: 0;
+	}
+	.portfolio-item-wrapper {
+		.lh-transition( opacity 0.3s ease-in-out );
+		&.item-disabled {
+			opacity: 0.3;
+		}
+	}
+	.polar-portfolio .featured-media-wrapper {
+		padding-top: 100%;
+	}
+	.direction-nav-arrow-wrapper {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		&.moved-inner {
+			opacity: 0;
+			.direction-nav-arrow {
+				color: #fff;
+				opacity: 1;
+				&:not(:hover) {
+					background-color: rgba( 50, 50, 50, 0.4 );
+				}
+				&.prev {
+					left: 15px;
+				}
+				&.next {
+					right: 15px;
+				}
+			}
+		}
+	}
+	.polar-portfolio-carousel-wrapper:hover .direction-nav-arrow-wrapper.moved-inner {
+		opacity: 1;
+	}
+	.direction-nav-arrow {
+		position: relative;
+		width: 43px;
+		height: 43px;
+		line-height: 45px;
+		font-size: 25px;
+		text-align: center;
+		background-color: #e8e8e8;
+		color: #333;
+		opacity: 0.7;
+		.lh-transition( background-color 0.3s ease-in-out, color 0.3s ease-in-out );
+		position: absolute;
+		top: 50%;
+		margin-top: -21px;
+		.zindex( 10 );
+		&.prev {
+			left: -74px;
+		}
+		&.next {
+			right: -74px;
+		}
+		&:hover {
+			&:extend( .polar-primary-color-bg-color );
+			color: #fff;
+		}
+	}
+	&.with-item-padding {
+		.polar-portfolio-carousel {
+			margin-left: -15px;
+			margin-right: -15px;
+		}
+		.portfolio-item-wrapper {
+			padding: 0 15px;
+		}
+	}
+}

@@ -1,0 +1,33 @@
+.crf-pagination {
+	text-align: center;
+	margin-top: 70px;
+	&:extend( .polar-heading-font );
+	& > a,
+	& > span {
+		display: inline-block;
+		width: 34px;
+		height: 34px;
+		line-height: 34px;
+		border: 1px solid transparent;
+		&:not(:last-child) {
+			margin-right: 5px;
+		}
+	}
+	& > a {
+		&:extend( .polar-pagination-color );
+		.lh-transition( border-color 0.3s, bg-color 0.3s, color 0.3s );
+		&:hover {
+			&:extend( .polar-pagination-color-border-color );
+		}
+	}
+	& > span {
+		&:not(.current) {
+			&:extend( .polar-pagination-color );
+		}
+		&.current {
+			&:extend( .polar-pagination-color-border-color );
+			&:extend( .polar-pagination-color-bg-color );
+			&:extend( .polar-bg-color-color );
+		}
+	}
+}

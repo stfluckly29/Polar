@@ -1,0 +1,51 @@
+header {
+	.title-area {
+		&:extend( .polar-header-nav-color-dark );
+		&:extend( .polar-bg-color-dark );
+		text-align: center;
+		position: relative;
+		overflow: hidden;
+		.zindex( 0, 'slider' );
+	}
+	.title-area-bg {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-position: center top;
+		z-index: -1;
+	}
+	.title-area-content-wrapper {
+		display: table;
+		width: 100%;
+		&:extend( .polar-header-title-area-height );
+	}
+	.title-area-content {
+		display: table-cell;
+		vertical-align: middle;
+		padding: 0 10%;
+		.page-title {
+			color: inherit;
+			text-transform: uppercase;
+			margin-bottom: 18px;
+		}
+		.crf-breadcrumbs {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			li {
+				display: inline-block;
+				&:not(:last-child) {
+					&:after {
+						content: '/';
+						padding: 0 5px;
+					}
+				}
+				a:not(:hover) {
+					&:extend( .polar-text-color2 );
+				}
+			}
+		}
+	}
+}

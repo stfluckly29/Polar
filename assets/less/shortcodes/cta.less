@@ -1,0 +1,174 @@
+@cta_icon_size:				30px;
+@cta_icon_wrap_size:		70px;
+@cta_icon_def_wrap_color:	white;
+.polar_cta {
+	padding: 70px 0;
+	.cta-content {
+		text-align: center;
+	}
+	.cta-button {
+		padding-top: 30px;
+		text-align: center;
+	}
+	.heading {
+		line-height: 1.3;
+		margin-bottom: 0;
+	}
+	.sub-heading {
+		font-size: 13px;
+		line-height: 1.3;
+		margin-top: 10px;
+	}
+	.container {
+		max-width: 100%;
+	}
+	&.polar-right {
+		.cta-wrap {
+			width: 100%;
+			display:table;
+		}
+		.cta-content {
+			text-align: left;
+			display: table-cell;
+			vertical-align: middle;
+		}
+		.cta-button {
+			padding-top: 0;
+			padding-left: 20px;
+			text-align: right;
+			display: table-cell;
+			vertical-align: middle;
+		}
+		.cta-icon {
+			display: table-cell;
+			vertical-align: middle;
+			padding-right: 30px;
+		}
+	}
+	&.polar-right, &.polar-bottom {
+		text-shadow: none;
+	}
+	.polar_button {
+		white-space: nowrap;
+	}
+	.cta-icon {
+		width: @cta_icon_wrap_size;
+		.icon-wrap-inner {
+			width: @cta_icon_wrap_size;
+			height: @cta_icon_wrap_size;
+			text-align: center;
+			line-height: @cta_icon_wrap_size;
+		}
+		i {
+			font-size: @cta_icon_wrap_size;
+			line-height: inherit;
+		}
+		&.polar-wrap-solid,
+		&.polar-wrap-outline,
+		&&.polar-wrap-focus {
+			i {
+				font-size: @cta_icon_size;
+			}
+		}
+		&.polar-wrap-solid {
+			.icon-wrap {
+				background-color: @cta_icon_def_wrap_color;
+			}
+		}
+		&.polar-wrap-outline {
+			.icon-wrap {
+				border-color: @cta_icon_def_wrap_color;
+				position: relative;
+				&:before {
+					box-sizing: border-box;
+					content: '';
+					position: absolute;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					border-width: 2px;
+					border-style: solid;
+					border-color: inherit;
+				}
+			}
+			i {
+				font-size: @cta_icon_size;
+			}
+		}
+		&.polar-wrap-focus {
+			i {
+				font-size: @cta_icon_size;
+			}
+			.icon-wrap {
+				position: relative;
+				border-color: @cta_icon_def_wrap_color;
+				&:before, &:after {
+					content: '';
+					box-sizing: border-box;
+					position: absolute;
+					top: 0;
+					width: 30%;
+					height: 30%;
+					border-width: 2px;
+					border-top-style: solid;
+					border-color: inherit;
+				}
+				&:before {
+					left: 0;
+					border-left-style: solid;
+				}
+				&:after {
+					right: 0;
+					border-right-style: solid;
+				}
+			}
+			.icon-wrap-inner {
+				border-color: inherit;
+				&:before, &:after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					width: 30%;
+					height: 30%;
+					border-width: 2px;
+					border-bottom-style: solid;
+					border-color: inherit;
+				}
+				&:before {
+					left: 0;
+					border-left-style: solid;
+				}
+				&:after {
+					right: 0;
+					border-right-style: solid;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 599px) {
+	.polar_cta {
+		&.polar-right {
+			.cta-button, .cta-content {
+				display: block;
+				text-align: center;
+			}
+			.cta-button {
+				padding-top: 30px;
+			}
+			.cta-icon {
+				display: block;
+				padding: 0;
+				margin: 0 auto 30px;
+			}
+		}
+	}
+}
+
+/* CTA Overridables */
+.polar_cta {
+	.cta-icon {
+		&:extend(.polar-primary-color);
+	}
+}

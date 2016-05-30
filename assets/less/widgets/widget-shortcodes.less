@@ -1,0 +1,24 @@
+// Shortcodes for footer widgets 
+.polar-widget-separator {
+	&:extend( .polar-widget-border-color );
+	border-style: dashed;
+	border-width: 1px 0 0;
+}
+.polar-widget-social-links {
+	font-size: 15px;
+	a {
+		&:not(:last-child) {
+			margin-right: 18px;
+		}
+		&:hover {
+			&:extend( .polar-primary-color );
+		}
+	}
+}
+
+footer {
+	.polar-widget-separator {
+		&:extend( .polar-footer-border-color );
+		border-style: solid;
+	}
+}

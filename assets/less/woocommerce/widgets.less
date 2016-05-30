@@ -1,0 +1,217 @@
+@padding: 20px;
+.woocommerce ul.product_list_widget {
+	li {
+		position: relative;
+		padding: 0 22px @padding 0 !important;
+		min-height: 60px;
+		border-width: 0 0 1px;
+		border-style: solid;
+		&:extend( .polar-border-color );
+		&:not(:last-child) {
+			margin-bottom: @padding !important;
+		}
+		&.empty {
+			padding-bottom: 0 !important;
+		}
+		img {
+			position: absolute;
+			display: block;
+			left: 0;
+			top: 0;
+			width: 60px;
+			float: none;
+			margin: 0;
+		}
+		.product-info {
+			margin-left: 60px + @padding;
+			.product-link {
+				&:extend( .polar-heading-color );
+				&:hover {
+					&:extend( .polar-primary-color );
+				}
+			}
+			.product-name {
+				line-height: 1.4;
+				margin-bottom: 5px;
+				&:extend( .polar-heading-font );
+				&:extend( .polar-text-font-weight );
+				text-transform: uppercase;
+			}
+			.star-rating {
+				font-size: 12px;
+				margin-bottom: 3px;
+			}
+			span.amount {
+				&:extend( .polar-heading-font );
+				&:extend( .polar-text-font-weight );
+				color: inherit;
+			}
+			del {
+				&:extend( .polar-text-color );
+			}
+			ins {
+				text-decoration: none;
+			}
+		}
+		dl.variation {
+			margin: 0px 0px 5px;
+			border-left: 0;
+			padding: 0;
+			&:extend( .polar-heading-color );
+			line-height: 1.8;
+			font-size: 0.9em;
+			dt {
+				padding: 0;
+				margin: 0;
+				&:before {
+					content: '\035';
+					font-family: "ElegantIcons";
+					font-size: 15px;
+					line-height: 15px;
+					vertical-align: -1px;
+					margin: 0 6px 0 3px;
+				}
+			}
+			dd {
+				padding: 0;
+				margin: 0;
+				float: right;
+			}
+		}
+	}
+}
+
+.widget_recent_reviews ul.product_list_widget {
+	li {
+		& > a,
+		.star-rating-container,
+		.reviewer {
+			margin-left: 60px + @padding;
+		}
+		& > a {
+			display: block;
+			line-height: 1.4;
+			margin-bottom: 3px;
+			text-transform: uppercase;
+			&:extend( .polar-heading-font );
+			&:extend( .polar-text-font-weight );
+			&:not(:hover) {
+				&:extend( .polar-heading-color );
+			}
+		}
+		.star-rating {
+			font-size: 12px;
+			margin-bottom: 3px;
+		}
+		.reviewer {
+			display: block;
+			font-size: 12px;
+		}
+	}
+}
+
+// Search
+.woocommerce-product-search {
+	@height: 40px;
+	width: 100%;
+	height: @height;
+	border: 1px solid;
+	&:extend( .polar-border-color );
+	position: relative;
+	.search-input-wrapper {
+		margin-right: @height;
+		input {
+			height: @height;
+			border: 0;
+			&:extend( .polar-text-font-size-m_1 );
+			padding-right: 5px;
+		}
+	}
+	.wc-search-button {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: @height;
+		height: @height;
+		text-align: center;
+		background: transparent;
+		.lh-appearance( none );
+		border: 0;
+		font-size: 12px;
+		&:extend( .polar-wc-button-bg-color-text-color );
+	}
+}
+
+// Shopping cart and minicart
+.polar-mini-cart-container,
+.woocommerce .widget_shopping_cart,
+.woocommerce.widget_shopping_cart {
+	p.total {
+		display: table;
+		width: 100%;
+		border-top: 0;
+		span.label, strong {
+			display: table-cell;
+			vertical-align: middle;
+		}
+		strong {
+			text-align: right;
+		}
+	}
+}
+
+// Price filter
+.woocommerce .widget_price_filter {
+	// Range slider
+	.price_slider_wrapper .ui-widget-content {
+		&:extend( .polar-wc-button-bg-color );
+		border-radius: 0;
+		height: 1px;
+	}
+	.ui-slider-horizontal .ui-slider-range {
+		&:extend( .polar-wc-button-bg-color );
+		border-radius: 0;
+	}
+	.ui-slider .ui-slider-handle {
+		width: 17px;
+		height: 17px;
+		border-radius: 999px;
+		margin-left: -8px;
+		top: -8px;
+		background: transparent;
+		&:before,
+		&:after {
+			position: absolute;
+			display: block;
+			content: '';
+			border-radius: 999px;
+		}
+		&:before {
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			&:extend( .polar-wc-button-bg-color );
+			opacity: 0.2;
+		}
+		&:after {
+			left: 3px;
+			top: 3px;
+			right: 3px;
+			bottom: 3px;
+			&:extend( .polar-wc-button-bg-color );
+		}
+	}
+	// Price range label
+	.price_label {
+		text-align: left;
+		&:extend( .polar-text-font );
+		&:extend( .polar-text-font-weight );
+		&:extend( .polar-heading-color );
+	}
+	// Button
+	.price_slider_amount .button {
+		&:extend( .polar-text-font-size-m_2 );
+		float: right;
+	}
+}

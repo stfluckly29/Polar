@@ -1,0 +1,45 @@
+.polar-isotope-filter {
+	text-align: center;
+	margin-bottom: 90px;
+	margin-right: -35px;
+	///max-width: 100%;		// To prevent overflow of margin right -35px
+	.filter {
+		display: inline-block;
+		margin-right: 35px;
+		&:extend( .polar-heading-font );
+		&:extend( .polar-h6-font-size );
+		&:extend( .polar-text-color2 );
+		&:extend( .polar-bold-heading );
+		&.active,
+		&:hover {
+			&:extend( .polar-heading-color );
+		}
+	}
+}
+// Filter with heading in portfolio shortcode
+.polar-filter-with-heading {
+	margin-bottom: 90px;
+	& > .container {
+		max-width: 100%;
+	}
+	.filter-heading-wrapper {
+		display: table;
+		width: 100%;
+	}
+	.polar-filter-heading,
+	.polar-isotope-filter {
+		display: table-cell;
+		vertical-align: middle;
+	}
+	.polar-filter-heading {
+		.heading {
+			margin-bottom: 0;
+			&:extend( .polar-h2-font-size );
+			&:extend( .polar-bold-heading );
+		}
+	}
+	.polar-isotope-filter {
+		text-align: right;
+		margin-bottom: 0;
+	}
+}

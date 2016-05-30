@@ -1,0 +1,28 @@
+.tagcloud {
+	.clearfix;
+	margin-right: -9px;
+	a {
+		padding: 2px 12px 1px;
+		display: block;
+		float: left;
+		margin: 0 9px 10px 0;
+		&:extend( .polar-widget-tags-font-size );
+		&:extend( .polar-text-color2 );
+		&:extend( .polar-widget-border-color );
+		border-style: solid;
+		border-width: 1px;
+		.lh-transition( border-color 0.3s, color 0.3s, background-color 0.3s );
+		&:hover {
+			color: #fff;
+			&:extend( .polar-primary-color-bg-color );
+			&:extend( .polar-primary-color-border-color );
+		}
+	}
+}
+
+footer .tagcloud {
+	a {
+		border-width: 0;
+		&:extend( .polar-footer-element-bg-color );
+	}
+}
